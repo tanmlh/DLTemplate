@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from .Layers import EncoderLayer, DecoderLayer
-from models.modules import metrics, components
+# from models.modules import metrics, components
 import torch.nn.functional as F
 import pdb
 

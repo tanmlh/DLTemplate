@@ -15,7 +15,7 @@ import torch.autograd as autograd
 import torch.nn.functional as F
 
 from .base_solver import BaseSolver
-from .modules import components
+from .modules import enc_net
 from .modules import loss_fun
 from utils import visualizer
 from utils import metric
@@ -79,7 +79,7 @@ class DummyModel(nn.Module):
         self.net_conf = net_conf
         self.num_classes = net_conf['num_classes']
 
-        self.enc_net = components.get_enc_net(net_conf)
+        self.enc_net = enc_net.get_enc_net(net_conf)
 
         self.mse_loss_fun = nn.MSELoss()
         self.l1_loss_fun = nn.SmoothL1Loss()

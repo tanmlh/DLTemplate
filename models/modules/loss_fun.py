@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from . import components
 import pdb
+from . import cnn_net
 
 
 class GANLoss(nn.Module):
@@ -10,7 +10,7 @@ class GANLoss(nn.Module):
     def __init__(self, net_conf):
         super(GANLoss, self).__init__()
         self.net_conf = net_conf
-        self.dis_net = components.get_dis_net(net_conf)
+        self.dis_net = cnn.get_cnn_net(net_conf)
         self.l1_loss_fun = nn.SmoothL1Loss()
 
     def forward(self, pred_pos, tensors, loss_type='gen'):

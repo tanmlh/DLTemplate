@@ -9,7 +9,6 @@ from .densenet import densenet_encoders
 from .inceptionresnetv2 import inceptionresnetv2_encoders
 from .inceptionv4 import inceptionv4_encoders
 from .efficientnet import efficient_net_encoders
-from models.modules.darts.model import get_darts_net
 # from .mobilenet import mobilenet_encoders
 # from .xception import xception_encoders
 
@@ -29,9 +28,6 @@ encoders.update(efficient_net_encoders)
 
 
 def get_encoder(name, in_channels=3, depth=5, weights=None):
-
-    if name == 'darts_imagenet':
-        return get_darts_net()
 
     Encoder = encoders[name]["encoder"]
     params = encoders[name]["params"]
