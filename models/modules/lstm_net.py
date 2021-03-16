@@ -2,7 +2,6 @@ import torch.nn as nn
 import torch
 import pdb
 
-
 class LSTM(nn.Module):
 
     def __init__(self, input_channel, hidden_dim, bidirectional=True):
@@ -22,4 +21,4 @@ class LSTM(nn.Module):
 
     def forward(self, input):
         output, _ = self.rnn(input)
-        return output  
+        return output
